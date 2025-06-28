@@ -11,7 +11,7 @@ if [ -f /usr/local/bin/setup.sh ]; then
 fi
 
 # Check if the first argument matches one of our scripts
-case "$1" in
+case "${1:-}" in
     "login_start"|"login_finish"|"refresh_token")
         # Execute the script directly (they have shebangs)
         script="/usr/local/bin/$1"
