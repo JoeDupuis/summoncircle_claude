@@ -66,7 +66,14 @@ RUN apt-get update \
         gawk \
         lsb-release \
         pipx \
+        ca-certificates \
+        iptables \
+        docker.io \
+        docker-compose \
     && rm -rf /var/lib/apt/lists/*
+
+# Add claude user to docker group
+RUN usermod -aG docker claude
 
 ### Additional Ruby versions (needs root for /opt/rbenv) ###
 
